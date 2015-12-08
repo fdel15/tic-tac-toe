@@ -1,5 +1,4 @@
-var human = 'x';
-var computer = 'o';
+var human, computer;
 var currentPlayer;
 var players = [human, computer];
 var board = new Array(9);
@@ -23,12 +22,13 @@ function newGame() {
 
 }
 
-$('#playerX').on('click', function() {
+$(document).on('click', '#playerX', function(event) {
+    event.preventDefault();
     human = 'x';
     computer = 'o';
   })
 
-  $('#playerO').on('click', function() {
+  $(document).on('click', '#playerO', function() {
     human = 'o';
     computer = 'x';
     computerTurn();
